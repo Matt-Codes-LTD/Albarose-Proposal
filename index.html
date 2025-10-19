@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Design & Development Proposal - Alberose Ltd</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
         
         @page {
             margin: 2cm;
@@ -18,269 +18,371 @@
         }
         
         :root {
-            --primary: #ff6b35;
-            --primary-dark: #e55a2b;
-            --secondary: #2c3e50;
-            --text-dark: #1a202c;
-            --text-body: #4a5568;
-            --text-light: #718096;
-            --bg-light: #f7fafc;
-            --bg-white: #ffffff;
-            --border: #e2e8f0;
-            --accent-blue: #4299e1;
-            --accent-green: #48bb78;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 6px 10px rgba(0,0,0,0.08);
+            /* Modern Color Palette */
+            --primary: #FF6B35;
+            --primary-dark: #E55527;
+            --primary-light: #FF8A5B;
+            --secondary: #1A1F36;
+            --accent: #4F46E5;
+            --accent-light: #818CF8;
+            --success: #10B981;
+            --warning: #F59E0B;
+            
+            /* Neutrals */
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-tertiary: #94A3B8;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8FAFC;
+            --bg-tertiary: #F1F5F9;
+            --border-light: #E2E8F0;
+            --border-medium: #CBD5E1;
+            
+            /* Shadows */
+            --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            /* Spacing */
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --spacing-4xl: 96px;
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
         }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.7;
-            color: var(--text-body);
-            max-width: 900px;
+            color: var(--text-secondary);
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-            font-size: 15px;
+            padding: var(--spacing-xl);
+            background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F8FAFC 100%);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         /* Cover Page */
         .cover {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, #1A1F36 0%, #2D3548 50%, #1A1F36 100%);
             color: white;
-            padding: 80px 60px;
-            border-radius: 20px;
-            margin-bottom: 60px;
+            padding: var(--spacing-4xl) var(--spacing-3xl);
+            border-radius: var(--radius-2xl);
+            margin-bottom: var(--spacing-4xl);
             text-align: center;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-2xl);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .cover::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: float 20s infinite ease-in-out;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            animation: float 25s infinite ease-in-out;
+        }
+        
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+            animation: float 30s infinite ease-in-out reverse;
         }
         
         @keyframes float {
-            0%, 100% { transform: translate(-30px, -30px); }
-            50% { transform: translate(30px, 30px); }
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
         }
         
         .cover h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -1.5px;
             position: relative;
             z-index: 1;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .cover .subtitle {
-            font-size: 18px;
-            opacity: 0.95;
-            font-weight: 300;
-            margin-bottom: 40px;
+            font-size: 20px;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-bottom: var(--spacing-3xl);
             position: relative;
             z-index: 1;
+            color: #CBD5E1;
+            letter-spacing: 0.5px;
         }
         
         .cover .meta {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 24px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
             display: inline-block;
             position: relative;
             z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
         }
         
         .cover .meta-item {
-            font-size: 14px;
-            margin: 8px 0;
+            font-size: 15px;
+            margin: var(--spacing-sm) 0;
             opacity: 0.95;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
         }
         
         .cover .meta-item strong {
             font-weight: 600;
-            display: inline-block;
-            width: 120px;
+            color: #E2E8F0;
+            min-width: 130px;
             text-align: right;
-            margin-right: 12px;
+        }
+        
+        .cover .meta-item span {
+            text-align: left;
+            color: #FFFFFF;
         }
         
         .cover a {
-            color: white;
-            text-decoration: underline;
-            text-underline-offset: 2px;
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 138, 91, 0.3);
+        }
+        
+        .cover a:hover {
+            color: #FFFFFF;
+            border-bottom-color: #FFFFFF;
         }
         
         /* Navigation/TOC */
         .toc {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-3xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
         .toc h2 {
-            font-size: 18px;
-            color: var(--text-dark);
-            margin-bottom: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
         }
         
         .toc-list {
             list-style: none;
             padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-sm);
         }
         
         .toc-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--bg-light);
-            font-size: 14px;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            background: var(--bg-secondary);
         }
         
-        .toc-list li:last-child {
-            border-bottom: none;
+        .toc-list li:hover {
+            background: var(--bg-tertiary);
+            transform: translateX(4px);
         }
         
         .toc-list span {
             color: var(--primary);
-            font-weight: 600;
-            display: inline-block;
-            width: 30px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            flex-shrink: 0;
         }
         
         /* Section Styling */
         .section {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 48px;
-            margin-bottom: 32px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-3xl);
+            margin-bottom: var(--spacing-xl);
             box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-light);
             position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            box-shadow: var(--shadow-xl);
+            border-color: var(--border-medium);
         }
         
         .section-number {
             position: absolute;
-            top: 48px;
-            left: 48px;
-            width: 40px;
-            height: 40px;
+            top: var(--spacing-xl);
+            right: var(--spacing-xl);
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            border-radius: 10px;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 18px;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .section.has-number h2:first-child {
-            padding-left: 56px;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         /* Typography */
         h2 {
-            color: var(--text-dark);
-            font-size: 28px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-primary);
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
+            margin-bottom: var(--spacing-xl);
+            letter-spacing: -1px;
             position: relative;
-            padding-bottom: 0;
-            border-bottom: none;
+            line-height: 1.2;
         }
         
         h2::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -12px;
             left: 0;
-            width: 60px;
+            width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-            border-radius: 2px;
-        }
-        
-        .section.has-number h2::after {
-            left: 56px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
         }
         
         h3 {
-            color: var(--secondary);
-            font-size: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-primary);
+            font-size: 24px;
             font-weight: 600;
-            margin: 36px 0 20px 0;
+            margin: var(--spacing-2xl) 0 var(--spacing-lg) 0;
             position: relative;
-            padding-left: 20px;
+            padding-left: var(--spacing-lg);
+            line-height: 1.3;
         }
         
         h3::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 0;
+            bottom: 0;
             width: 4px;
-            height: 24px;
-            background: var(--primary);
-            border-radius: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
         }
         
         h4 {
-            color: var(--text-dark);
-            font-size: 16px;
+            color: var(--text-primary);
+            font-size: 18px;
             font-weight: 600;
-            margin: 24px 0 12px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 14px;
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+            letter-spacing: 0;
         }
         
         p {
-            margin-bottom: 16px;
+            margin-bottom: var(--spacing-lg);
             line-height: 1.8;
-            color: var(--text-body);
+            color: var(--text-secondary);
+            font-size: 16px;
         }
         
         /* Lists */
         ul, ol {
             margin-left: 0;
-            margin-bottom: 20px;
+            margin-bottom: var(--spacing-xl);
             padding-left: 0;
         }
         
         ul li, ol li {
             position: relative;
-            padding-left: 32px;
-            margin-bottom: 12px;
-            line-height: 1.7;
+            padding-left: 40px;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
         }
         
         ul li::before {
             content: '';
             position: absolute;
-            left: 8px;
-            top: 10px;
-            width: 6px;
-            height: 6px;
-            background: var(--primary);
+            left: var(--spacing-sm);
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
         
         ol {
@@ -294,112 +396,267 @@
         ol li::before {
             content: counter(item);
             position: absolute;
-            left: 8px;
+            left: var(--spacing-sm);
             top: 2px;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border-radius: 50%;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: var(--shadow-sm);
         }
         
         /* Highlight Boxes */
         .highlight-box {
-            background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 107, 53, 0.02));
             border-left: 4px solid var(--primary);
-            border-radius: 8px;
-            padding: 28px;
-            margin: 28px 0;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
             box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-left: 4px solid var(--primary);
         }
         
         .highlight-box h4 {
             color: var(--primary);
             margin-top: 0;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            text-transform: none;
-            letter-spacing: 0;
-            margin-bottom: 16px;
+            margin-bottom: var(--spacing-md);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .info-box {
-            background: linear-gradient(135deg, #e3f2fd, #f3f4f6);
-            border-left: 4px solid var(--accent-blue);
-            border-radius: 8px;
-            padding: 24px;
-            margin: 24px 0;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(79, 70, 229, 0.02));
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            border-left: 4px solid var(--accent);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .info-box h4, .info-box strong:first-child {
+            color: var(--accent);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .warning-box {
-            background: linear-gradient(135deg, #fff3e0, #fef5e7);
-            border-left: 4px solid #ff9800;
-            border-radius: 8px;
-            padding: 24px;
-            margin: 24px 0;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(245, 158, 11, 0.02));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-left: 4px solid var(--warning);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .warning-box h4 {
+            color: var(--warning);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         /* Cards */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 24px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
         }
         
         .card {
-            background: var(--bg-light);
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
             border-color: var(--primary);
         }
         
+        .card:hover::before {
+            opacity: 1;
+        }
+        
         .card h5 {
-            color: var(--text-dark);
-            font-size: 16px;
+            color: var(--text-primary);
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: var(--spacing-md);
+            font-family: 'Space Grotesk', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
         }
         
         .card p {
-            font-size: 14px;
-            color: var(--text-light);
+            font-size: 15px;
+            color: var(--text-secondary);
             margin: 0;
+            line-height: 1.7;
+        }
+        
+        /* Website Inspiration Cards */
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .inspiration-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .inspiration-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-2xl);
+            border-color: var(--accent);
+        }
+        
+        .inspiration-header {
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .inspiration-header h5 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 var(--spacing-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .inspiration-header .url {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            font-family: 'Monaco', 'Courier New', monospace;
+            word-break: break-all;
+        }
+        
+        .inspiration-body {
+            padding: var(--spacing-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .inspiration-body p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .inspiration-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: auto;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(79, 70, 229, 0.05));
+            color: var(--accent);
+            font-size: 12px;
+            border-radius: var(--radius-full);
+            font-weight: 500;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+        
+        .inspiration-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .inspiration-link:hover {
+            transform: translateX(2px);
+            box-shadow: var(--shadow-md);
         }
         
         /* Price Box */
         .price-box {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--secondary) 0%, #2D3548 100%);
             color: white;
-            padding: 48px;
+            padding: var(--spacing-3xl);
             text-align: center;
-            margin: 40px 0;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
+            margin: var(--spacing-3xl) 0;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .price-box::before {
             content: '';
             position: absolute;
             top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at top right, rgba(255,255,255,0.2) 0%, transparent 60%);
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .price-box::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+            animation: float 25s infinite ease-in-out reverse;
         }
         
         .price-box * {
@@ -409,36 +666,57 @@
         
         .price-box h2 {
             color: white;
-            font-size: 24px;
-            margin-bottom: 32px;
+            font-size: 32px;
+            margin-bottom: var(--spacing-xl);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .price-box h2::after {
-            background: rgba(255,255,255,0.3);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
             left: 50%;
             transform: translateX(-50%);
         }
         
         .price-amount {
-            font-size: 42px;
+            font-size: 56px;
             font-weight: 800;
-            margin: 32px 0;
-            letter-spacing: -1px;
+            margin: var(--spacing-2xl) 0;
+            letter-spacing: -2px;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #FFFFFF, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .price-box > p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 17px;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .price-box > p strong {
+            color: white;
+            font-size: 20px;
+            display: block;
+            margin: var(--spacing-2xl) 0 var(--spacing-lg) 0;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .price-box ul {
             list-style: none;
             padding: 0;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
             text-align: left;
         }
         
         .price-box ul li {
-            padding-left: 32px;
-            margin-bottom: 16px;
+            padding-left: 40px;
+            margin-bottom: var(--spacing-lg);
             position: relative;
-            color: rgba(255,255,255,0.95);
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 16px;
         }
         
         .price-box ul li::before {
@@ -447,59 +725,74 @@
             left: 0;
             top: 0;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 20px;
+            color: var(--primary-light);
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 107, 53, 0.2);
+            border-radius: 50%;
         }
         
         .price-box ul li strong {
             color: white;
             display: block;
             margin-bottom: 4px;
+            font-weight: 600;
         }
         
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 40px;
-            margin: 32px 0;
+            padding-left: 48px;
+            margin: var(--spacing-xl) 0;
         }
         
         .timeline::before {
             content: '';
             position: absolute;
-            left: 12px;
-            top: 8px;
-            bottom: 8px;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary), var(--accent-blue));
+            left: 14px;
+            top: 12px;
+            bottom: 12px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
         }
         
         .timeline-item {
             position: relative;
-            padding-bottom: 24px;
+            padding-bottom: var(--spacing-xl);
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
         }
         
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -32px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
+            left: -38px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
             background: var(--primary);
-            border: 3px solid var(--bg-white);
+            border: 4px solid var(--bg-primary);
             border-radius: 50%;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
         }
         
         .timeline-item strong {
-            color: var(--text-dark);
+            color: var(--text-primary);
             font-weight: 600;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: var(--spacing-xs);
+            font-size: 17px;
         }
         
         .timeline-item span {
-            color: var(--primary);
+            color: var(--text-tertiary);
             font-size: 14px;
             font-weight: 500;
         }
@@ -507,17 +800,18 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 48px 24px;
-            margin-top: 80px;
-            border-top: 2px solid var(--border);
-            color: var(--text-light);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            margin-top: var(--spacing-4xl);
+            border-top: 2px solid var(--border-light);
+            color: var(--text-tertiary);
         }
         
         .footer strong {
-            color: var(--text-dark);
-            font-size: 18px;
+            color: var(--text-primary);
+            font-size: 20px;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: var(--spacing-sm);
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .footer a {
@@ -525,6 +819,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s ease;
+            font-size: 16px;
         }
         
         .footer a:hover {
@@ -538,20 +833,20 @@
         }
         
         .mt-large {
-            margin-top: 48px;
+            margin-top: var(--spacing-3xl);
         }
         
         .mb-large {
-            margin-bottom: 48px;
+            margin-bottom: var(--spacing-3xl);
         }
         
         .page-break {
             page-break-before: always;
-            padding-top: 40px;
+            padding-top: var(--spacing-3xl);
         }
         
         strong {
-            color: var(--text-dark);
+            color: var(--text-primary);
             font-weight: 600;
         }
         
@@ -563,7 +858,11 @@
         
         a:hover {
             color: var(--primary-dark);
-            text-decoration: underline;
+        }
+        
+        em {
+            color: var(--text-tertiary);
+            font-style: italic;
         }
         
         /* Print Styles */
@@ -586,47 +885,63 @@
             .toc {
                 display: none;
             }
+            
+            .section-number {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: var(--spacing-md);
             }
             
             .section {
-                padding: 32px 24px;
+                padding: var(--spacing-xl);
             }
             
             .cover {
-                padding: 60px 32px;
+                padding: var(--spacing-3xl) var(--spacing-xl);
             }
             
             .cover h1 {
-                font-size: 32px;
+                font-size: 36px;
+            }
+            
+            .cover .subtitle {
+                font-size: 16px;
             }
             
             h2 {
-                font-size: 24px;
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 20px;
             }
             
             .price-amount {
-                font-size: 32px;
+                font-size: 40px;
             }
             
             .section-number {
                 position: static;
                 display: inline-flex;
-                margin-right: 12px;
-                margin-bottom: 12px;
+                margin-bottom: var(--spacing-md);
             }
             
-            .section.has-number h2:first-child {
-                padding-left: 0;
+            .card-grid {
+                grid-template-columns: 1fr;
             }
             
-            .section.has-number h2::after {
-                left: 0;
+            .inspiration-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -637,31 +952,32 @@
         <h1>Website Design & Development Proposal</h1>
         <div class="subtitle">Premium Web Solutions for Commercial Excellence</div>
         <div class="meta">
-            <div class="meta-item"><strong>Prepared for:</strong> Alberose Ltd</div>
-            <div class="meta-item"><strong>Prepared by:</strong> Matthew Turner</div>
-            <div class="meta-item"><strong>Website:</strong> <a href="https://matt-codes.webflow.io">matt-codes.webflow.io</a></div>
-            <div class="meta-item"><strong>Date:</strong> October 19, 2025</div>
+            <div class="meta-item"><strong>Prepared for:</strong> <span>Alberose Ltd</span></div>
+            <div class="meta-item"><strong>Prepared by:</strong> <span>Matthew Turner</span></div>
+            <div class="meta-item"><strong>Website:</strong> <span><a href="https://matt-codes.webflow.io">matt-codes.webflow.io</a></span></div>
+            <div class="meta-item"><strong>Date:</strong> <span>October 19, 2025</span></div>
         </div>
     </div>
 
     <div class="toc">
         <h2>📑 Table of Contents</h2>
         <ul class="toc-list">
-            <li><span>1.</span> Project Overview</li>
-            <li><span>2.</span> Project Goals</li>
-            <li><span>3.</span> Project Scope</li>
-            <li><span>4.</span> Content Strategy & Mapping</li>
-            <li><span>5.</span> Brand Refresh & Visual Refinement</li>
-            <li><span>6.</span> Pages Included</li>
-            <li><span>7.</span> GDPR Compliance</li>
-            <li><span>8.</span> Deliverables</li>
-            <li><span>9.</span> Photography & Media Requirements</li>
-            <li><span>10.</span> Timeline</li>
-            <li><span>11.</span> Yearly Costs & Maintenance</li>
-            <li><span>12.</span> Terms of Agreement</li>
-            <li><span>13.</span> Investment</li>
-            <li><span>14.</span> Next Steps</li>
-            <li><span>15.</span> Conclusion</li>
+            <li><span>1</span> Project Overview</li>
+            <li><span>2</span> Project Goals</li>
+            <li><span>3</span> Project Scope</li>
+            <li><span>4</span> Content Strategy & Mapping</li>
+            <li><span>5</span> Brand Refresh & Visual Refinement</li>
+            <li><span>6</span> Website Design Inspiration</li>
+            <li><span>7</span> Pages Included</li>
+            <li><span>8</span> GDPR Compliance</li>
+            <li><span>9</span> Deliverables</li>
+            <li><span>10</span> Photography & Media Requirements</li>
+            <li><span>11</span> Timeline</li>
+            <li><span>12</span> Yearly Costs & Maintenance</li>
+            <li><span>13</span> Terms of Agreement</li>
+            <li><span>14</span> Investment</li>
+            <li><span>15</span> Next Steps</li>
+            <li><span>16</span> Conclusion</li>
         </ul>
     </div>
 
@@ -858,8 +1174,187 @@
         </div>
     </div>
 
-    <div class="section has-number">
+    <div class="section has-number page-break">
         <div class="section-number">6</div>
+        <h2>Website Design Inspiration</h2>
+        
+        <p>Below are carefully curated examples of modern construction and design websites that showcase exceptional user experience, visual storytelling, and contemporary web development practices. While some are from large corporations or different industries, each offers valuable inspiration that can be adapted to create something uniquely tailored for Alberose Ltd.</p>
+
+        <div class="info-box">
+            <h4>💡 What We're Looking For</h4>
+            <p>These examples highlight excellence in areas like visual hierarchy, project showcases, clean navigation, animation strategies, and professional tone. We'll cherry-pick the best elements and reimagine them specifically for your brand and audience.</p>
+        </div>
+
+        <div class="inspiration-grid">
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏗️ GKC Architects</h5>
+                    <div class="url">gkc.ca/en</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Exceptional architectural website featuring bold imagery, elegant typography, and sophisticated project filtering. Their minimalist approach lets the work speak for itself while maintaining strong brand presence.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Portfolio Grid</span>
+                        <span class="tag">Clean Navigation</span>
+                        <span class="tag">Image-First</span>
+                    </div>
+                    <a href="https://gkc.ca/en" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏢 Suffolk Construction</h5>
+                    <div class="url">suffolk.com</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Major construction firm with impressive large-scale photography, smooth page transitions, and clear service categorization. Excellent example of balancing corporate professionalism with visual appeal.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Transitions</span>
+                        <span class="tag">Photography</span>
+                        <span class="tag">B2B Focus</span>
+                    </div>
+                    <a href="https://suffolk.com/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🎨 BMA Architects</h5>
+                    <div class="url">bmadb.fr</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>French architectural studio with stunning visual storytelling, innovative scroll interactions, and artistic project presentations. Demonstrates how premium design can elevate brand perception.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Scroll Effects</span>
+                        <span class="tag">Artistic</span>
+                        <span class="tag">Premium Feel</span>
+                    </div>
+                    <a href="https://www.bmadb.fr/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏗️ Turner Construction</h5>
+                    <div class="url">turnerconstruction.com</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Leading US contractor with comprehensive project showcases, detailed case studies, and strong content organization. Great reference for structuring complex service offerings and portfolio presentations.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Case Studies</span>
+                        <span class="tag">Content Structure</span>
+                        <span class="tag">Enterprise</span>
+                    </div>
+                    <a href="https://www.turnerconstruction.com/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏗️ Hansen Yuncken</h5>
+                    <div class="url">hansenyuncken.com.au</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Australian construction company featuring dynamic hero sections, intuitive navigation, and compelling project storytelling. Strong example of balancing technical expertise with accessible design.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Hero Design</span>
+                        <span class="tag">Navigation</span>
+                        <span class="tag">Storytelling</span>
+                    </div>
+                    <a href="https://www.hansenyuncken.com.au/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏡 Eden Build</h5>
+                    <div class="url">edenbuild.co.uk</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>UK builder with refined aesthetic, beautiful before/after presentations, and engaging micro-interactions. Perfect reference for creating a boutique, high-quality brand impression.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Micro-interactions</span>
+                        <span class="tag">UK Market</span>
+                        <span class="tag">Boutique</span>
+                    </div>
+                    <a href="https://edenbuild.co.uk/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏗️ Michel Beaulieu</h5>
+                    <div class="url">michelbeaulieu.ca/en</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Canadian contractor with sophisticated typography, strategic white space use, and modern grid layouts. Demonstrates how simplicity can create impact without sacrificing information.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Typography</span>
+                        <span class="tag">White Space</span>
+                        <span class="tag">Grid Layout</span>
+                    </div>
+                    <a href="https://michelbeaulieu.ca/en/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏗️ Stewart Partners</h5>
+                    <div class="url">stewartpartners.studio</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Design-build firm showcasing seamless page transitions, engaging animations, and cohesive visual identity. Excellent example of contemporary web design meeting construction industry needs.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Animations</span>
+                        <span class="tag">Visual Identity</span>
+                        <span class="tag">Modern</span>
+                    </div>
+                    <a href="https://www.stewartpartners.studio/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏗️ ARC Projects</h5>
+                    <div class="url">arcprojects.build</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Progressive builder with bold color usage, immersive project galleries, and innovative layout approaches. Shows how to differentiate your brand while maintaining professional credibility.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Bold Design</span>
+                        <span class="tag">Galleries</span>
+                        <span class="tag">Innovative</span>
+                    </div>
+                    <a href="https://www.arcprojects.build/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <div class="inspiration-header">
+                    <h5>🏛️ AVCI Architects</h5>
+                    <div class="url">avciarchitects.com</div>
+                </div>
+                <div class="inspiration-body">
+                    <p>Architecture practice featuring elegant cursor interactions, refined hover states, and thoughtful content reveals. Perfect inspiration for adding polish and sophistication to user interactions.</p>
+                    <div class="inspiration-tags">
+                        <span class="tag">Interactions</span>
+                        <span class="tag">Hover Effects</span>
+                        <span class="tag">Polish</span>
+                    </div>
+                    <a href="https://avciarchitects.com/" target="_blank" class="inspiration-link">Visit Site →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box mt-large">
+            <h4>🎯 Our Approach</h4>
+            <p>These examples provide a foundation, but your website will be distinctly Alberose — reflecting your unique brand values, project excellence, and commitment to craftsmanship. We'll blend the best contemporary practices with your specific needs to create something memorable and effective.</p>
+        </div>
+    </div>
+
+    <div class="section has-number">
+        <div class="section-number">7</div>
         <h2>Pages Included</h2>
         
         <div class="card-grid">
@@ -875,7 +1370,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">7</div>
+        <div class="section-number">8</div>
         <h2>GDPR Compliance</h2>
         <ul>
             <li>Cookie consent banner implementation</li>
@@ -886,7 +1381,7 @@
     </div>
 
     <div class="section has-number page-break">
-        <div class="section-number">8</div>
+        <div class="section-number">9</div>
         <h2>Deliverables</h2>
         
         <div class="highlight-box">
@@ -904,7 +1399,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">9</div>
+        <div class="section-number">10</div>
         <h2>Photography & Media Requirements</h2>
         
         <p>All project photography, videos, and brand assets will be provided by Alberose Ltd. Images must be high-resolution, professionally shot, and licensed for use.</p>
@@ -922,7 +1417,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">10</div>
+        <div class="section-number">11</div>
         <h2>Timeline</h2>
         
         <div class="timeline">
@@ -951,7 +1446,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">11</div>
+        <div class="section-number">12</div>
         <h2>Yearly Costs & Maintenance</h2>
         
         <div class="card-grid">
@@ -971,7 +1466,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">12</div>
+        <div class="section-number">13</div>
         <h2>Terms of Agreement</h2>
         
         <ul>
@@ -985,7 +1480,7 @@
     <div class="price-box">
         <h2>Investment</h2>
         <p>For the design and development of a six-page CMS-integrated website with animations, brand refinement, and premium visuals:</p>
-        <div class="price-amount">£2,900 – £3,200</div>
+        <div class="price-amount">£3,000 – £3,500</div>
         <p><strong>Payment Structure</strong></p>
         <ul>
             <li>
@@ -1004,7 +1499,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">14</div>
+        <div class="section-number">15</div>
         <h2>Next Steps</h2>
         
         <div class="timeline">
@@ -1024,7 +1519,7 @@
     </div>
 
     <div class="section has-number">
-        <div class="section-number">15</div>
+        <div class="section-number">16</div>
         <h2>Conclusion</h2>
         
         <p>My goal is to deliver a website for Alberose Ltd that embodies excellence, reliability, and craftsmanship — mirroring the same values found in your construction work. By leveraging Webflow and modern design practices, we'll create a site that both impresses visitors and serves as a powerful lead-generation tool.</p>
